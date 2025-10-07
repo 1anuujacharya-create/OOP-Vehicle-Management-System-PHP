@@ -1,71 +1,75 @@
-# 🚗 OOP Vehicle Management System in PHP
+# 🚗 Vehicle Management System – PHP OOP Project
 
-A simple yet elegant **Object-Oriented PHP** web application that models a **car dealership management system**.  
-It demonstrates core OOP concepts such as **classes, inheritance, encapsulation, static properties, and polymorphism**,  
-combined with interactive **HTML forms** and **dynamic data rendering**.
+### Overview
+The **Vehicle Fleet Manager** is a PHP-based Object-Oriented Programming (OOP) web application designed for a car dealership that manages a diverse fleet of vehicles, including **Cars**, **Trucks**, and **Motorcycles**. The system allows users to dynamically add new vehicles, view the total count of created instances, and compare vehicles based on chosen attributes such as price or model year.
 
----
-
-## 🧾 Project Overview
-
-This project simulates a car dealership system that manages a diverse fleet of vehicles — **Cars, Trucks, and Motorcycles**.  
-Each vehicle type shares common attributes (brand, model, year, price) but also includes unique properties relevant to its category.
-
-The system allows users to:
-- Add new vehicles dynamically via a form.
-- View all registered vehicles in a clean and structured layout.
-- Compare any two vehicles based on **price** or **model year**.
-- Track the total number of vehicle instances created using a static class property.
-
-This project is designed to demonstrate **OOP principles in PHP** through a real-world example.
+This project demonstrates key OOP concepts such as **inheritance**, **encapsulation**, **method overriding**, **static properties**, and **class-based abstraction** — all implemented through an interactive web interface.
 
 ---
 
-## 🧠 Key OOP Concepts Demonstrated
+### 🎯 **Key Features**
+- **Base Class (`Vehicle`)**:  
+  Contains shared properties (`brand`, `model`, `year`, `price`) and methods such as:
+  - `displayInfo()` — Displays vehicle details.
+  - `compareVehicles()` — Compares two user-selected vehicles based on price, brand, model, or year.
+  - **Static Property `$vehicleCount`** — Automatically counts total vehicle instances created.
 
-### 1. **Base Class Creation**
-- `Vehicle` class defines shared attributes and behaviors.
-- Includes a **static property** `$vehicleCount` to track the total number of vehicles created.
-- Contains a `compareVehicles()` method to compare vehicles by price or year.
+- **Subclasses:**
+  - `Car` – Includes a unique property `$numberOfDoors`.
+  - `Truck` – Includes a unique property `$cargoCapacity`.
+  - `Motorcycle` – Includes a unique property `$handlebarType`.
 
-### 2. **Inheritance and Method Overriding**
-- Subclasses `Car`, `Truck`, and `Motorcycle` extend `Vehicle`.
-- Each adds unique properties:
-  - `Car`: `$numberOfDoors`
-  - `Truck`: `$cargoCapacity`
-  - `Motorcycle`: `$handlebarType`
-- Each subclass overrides `displayInfo()` to show both common and unique attributes.
+  Each subclass overrides the `displayInfo()` method to include its unique attribute.
 
-### 3. **Encapsulation and Polymorphism**
-- Common structure ensures reusability and maintainability.
-- `displayInfo()` behaves differently depending on the subclass invoked.
+- **Dynamic Vehicle Form:**  
+  Users can select the vehicle type (Car, Truck, or Motorcycle), input relevant details, and add it to the list. The total vehicle count automatically updates.
 
----
+- **Comparison Feature:**  
+  Allows comparison of any two user-added vehicles using a dropdown menu with options for brand, model, year, or price.
 
-## 🧰 Technologies Used
+- **Interactive Feedback:**  
+  When a new vehicle is added, a message appears dynamically at the top of the form confirming successful addition.
 
-| Component | Description |
-|------------|-------------|
-| **Language** | PHP (Object-Oriented PHP 8) |
-| **Frontend** | HTML5, CSS3 (inline minimal design) |
-| **Server** | Localhost (XAMPP / WAMP / PHP built-in server) |
-| **IDE** | Visual Studio Code |
+- **Persistent Vehicle List:**  
+  Newly added vehicles appear on the same page (below the form and above the comparison section) to guide users visually.
 
 ---
 
-## 💻 Features
-
-- 🚙 Add new vehicles dynamically via form inputs.
-- 🏗️ Modular OOP structure for scalability.
-- 🧮 Static counter to track all instantiated vehicles.
-- 🧾 Vehicle comparison by **price** or **model year**.
-- 🎨 Clean, elegant, and user-friendly interface.
-- 🧱 Demonstrates real-world use of **classes, inheritance, and polymorphism**.
+### 🧩 **System Flow**
+1. **User selects vehicle type** from a dropdown (`Car`, `Truck`, or `Motorcycle`).
+2. **Form dynamically changes** based on the selected type (e.g., shows doors for cars, cargo for trucks).
+3. **User fills in details** — brand, model, year, price, and type-specific property.
+4. **Upon submission:**
+   - Vehicle object is created.
+   - Static count increases.
+   - A success message appears.
+   - The vehicle is displayed in the list.
+5. **Users can compare** two vehicles based on price, brand, model, or year using dropdowns.
 
 ---
 
-## 🧑‍💻 How to Run the Project
+### 🧪 **Dummy Input Examples**
 
+| Type | Brand | Model | Year | Price ($) | Unique Attribute |
+|------|--------|--------|------|------------|------------------|
+| Car | Toyota | Corolla | 2022 | 25,000 | 4 doors |
+| Car | Honda | Civic | 2023 | 27,000 | 4 doors |
+| Truck | Ford | F-150 | 2021 | 45,000 | 1000 kg cargo capacity |
+| Truck | Tata | Xenon | 2022 | 38,000 | 900 kg cargo capacity |
+| Motorcycle | Yamaha | MT-15 | 2023 | 3,500 | Sport handlebar |
+| Motorcycle | Royal Enfield | Classic 350 | 2021 | 4,000 | Cruiser handlebar |
+
+---
+
+### ⚙️ **Technologies Used**
+- **PHP 8** (Object-Oriented Programming)
+- **HTML5 & CSS3** (User Interface)
+- **JavaScript** (Form interactivity and popup)
+- **Visual Studio Code** (Development Environment)
+
+---
+
+### 📖 **How to Run**
 1. Clone this repository:
    ```bash
-   git clone https://github.com/<your-username>/OOP-Vehicle-Management-System-PHP.git
+   git clone https://github.com/YourUsername/VehicleFleetManager_PHP_OOP.git
